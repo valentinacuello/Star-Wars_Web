@@ -1,0 +1,49 @@
+@import '/src/scss/utilities/variables';
+@import '/src/scss/utilities/mixins';
+
+.nav-bar-container{  
+  width: 100%;
+  position: fixed;
+
+  .nav-content{
+    width: 100%;
+    height: 100px;
+    background-color: $navBar-color;
+    backdrop-filter: blur(10px);
+    padding: 24px;
+    @include alignItemCenter;
+
+    .nav-items{
+      width: 100%;
+      @include flexSpaceBetween;
+
+      .logo{
+        width: 88px;
+      }
+  
+      .burger-menu{
+        color: #fff;
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  .mobile-menu{
+    width: 100%;
+    height: 35vh;
+    background-color: $navBar-color;
+    backdrop-filter: blur(10px);
+    @include flexCenter(column);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 300;
+    padding: 2em 0;
+    position: relative;
+    right: -100%;   
+  }
+
+  .show{
+    right: 0;
+    transition: all .3s ease-in;
+  }
+}
