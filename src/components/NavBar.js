@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../img/star-wars-logo.png';
 import {List} from "react-bootstrap-icons";
 import "../../src/scss/components/navbar.scss"
@@ -11,22 +12,28 @@ const NavBar = () => {
   }
   
   return (
-    <div className="nav-bar-container">
-      <div className="nav-content">
-        <div className="nav-items">
-          <img src={Logo} className="logo"/>
-          <div onClick={()=>{btnClicked()}}>
-            <List className="burger-menu"/>
-          </div>
+    <nav className="navbar">
+      <div className="navbar-container">
+        <Link to="/" className="logo">
+          <img src={Logo}></img>
+        </Link>
+        <div className="burger-menu">
+          <List/>
         </div>
-      </div>      
-      <div className={"mobile-menu" + (isClicked ? " show" : "")}>
-        <a>Personajes</a>
-        <a>Planetas</a>
-        <a>Iniciar sesión</a>
+        <ul className="nav-items">
+          <li>
+            Personajes
+          </li>
+          <li>
+            Planetas
+          </li>
+          <li>
+            Iniciar Sesión
+          </li>
+        </ul>
       </div>
-    </div>
-
+         
+    </nav>
   )
 }
 
