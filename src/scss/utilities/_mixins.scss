@@ -16,11 +16,11 @@
   
 }
 
-@mixin flexCenter($direction){
+@mixin flexCenter($direction, $justify){
   display: flex;
   flex-direction: $direction;
   align-items: center;
-  justify-content: space-between;
+  justify-content: $justify;
 }
 
 @mixin desktop(){

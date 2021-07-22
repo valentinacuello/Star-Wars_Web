@@ -5,8 +5,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import NavBar from "./components/NavBar";
-import Home from "./views/home";
+import NavBar from "./components/NavBar/NavBar";
+import Home from "./views/Home";
 import "../src/scss/app.scss";
 
 function App() {
@@ -18,19 +18,19 @@ function App() {
           <Route exact path="/">
             <Home/>
           </Route>
-          <Route exact path="/galery">
+          <Route exact path="/galeria">
             <Home/>
           </Route>
-          <Route exact path="/characters">
+          <Route exact path="/personajes">
             <Home/>
           </Route>
-          <Route exact path="/planets">
+          <Route exact path="/planetas">
             <Home/>
           </Route>
-          <Route exact path="/characters/:ch_id">
+          <Route exact path="/personajes/:ch_id">
             <Home/>
           </Route>
-          <Route exact path="/characters/:pl_id">
+          <Route exact path="/planetas/:pl_id">
             <Home/>
           </Route>
         </Switch>

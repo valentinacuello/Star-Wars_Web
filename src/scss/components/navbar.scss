@@ -1,49 +1,54 @@
 @import '/src/scss/utilities/variables';
 @import '/src/scss/utilities/mixins';
 
-.navbar{  
-  width: 100%;
-  position: fixed;
-
-  .navbar-container{
+.navbar{
     width: 100%;
-    height: 100px;
+    height: 90px;
     background-color: $navBar-color;
-    backdrop-filter: blur(10px);
-    padding: 24px;
-    @include alignItemCenter;
+    @include flexSpaceBetween();
+    position: fixed;
+
+    .logo{
+        margin-left: 16px;
+
+        img{
+            width: 120px;
+        }        
+    }
+
+    .burger-menu{
+        height: 2rem;
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        font-size: 2rem;
+        margin-right: 16px;
+    }
 
     .nav-items{
-      width: 100%;
-      @include flexSpaceBetween;
+        width: 100%;
+        height: 250px;
+        background-color: $navBar-color-sec;
+        @include flexCenter(column, space-between);
+        position: absolute;
+        top: 90px;
+        z-index: 10;
+        padding: 1em;
+        display: none;
 
-      .logo{
-        width: 88px;
-      }
-  
-      .burger-menu{
-        color: #fff;
-        font-size: 1.3rem;
-      }
+        li{
+            list-style: none;
+            
+            a{                
+                text-decoration: none;
+                text-transform: uppercase;
+                color: #fff;
+            }
+        }
     }
-  }
 
-  .mobile-menu{
-    width: 100%;
-    height: 35vh;
-    background-color: $navBar-color;
-    backdrop-filter: blur(10px);
-    @include flexCenter(column);
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 300;
-    padding: 2em 0;
-    position: relative;
-    right: -100%;   
-  }
+    .items-show{
+        display: flex;
+    }
 
-  .show{
-    right: 0;
-    transition: all .3s ease-in;
-  }
 }
